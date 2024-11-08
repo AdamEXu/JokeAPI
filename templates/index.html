@@ -108,5 +108,38 @@
       >
       <!-- prettier-ignore -->
     </div>
+    <div class="joke">
+      <b>POST /search-jokes</b>
+      <p>Parameters: query, limit (optional)</p>
+      <p>
+        Returns a list of jokes in JSON format that contain the query. If limit
+        is given, it returns at most limit jokes. If limit is not given, it
+        returns at most 10 jokes.
+      </p>
+      <p>Example usage:</p>
+      <!-- prettier-ignore -->
+      <code
+        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/search-jokes -H "Content-Type: application/json" -d '{"query": "something goes here", "limit": 3}'</code
+      >
+      <!-- prettier-ignore -->
+      <p>Returns:</p>
+      <code>{{ jokes[0:3] }}</code>
+    </div>
+    <div class="joke">
+      <b>POST /get-jokes-by-tag</b>
+      <p>Parameters: tag</p>
+      <p>Returns a list of jokes in JSON format that contain the tag.</p>
+      <p>Example usage:</p>
+      <!-- prettier-ignore -->
+      <code
+        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/get-jokes-by-tag -H "Content-Type: application/json" -d '{"tag": "programming"}'</code
+      >
+      <!-- prettier-ignore -->
+      <p>Returns:</p>
+      <code>{{ jokes[0:3] }}</code>
+    </div>
+    <footer>
+      <p>Made with ❤️ by <a href="https://adamxu.net/">Adam Xu</a></p>
+    </footer>
   </body>
 </html>
