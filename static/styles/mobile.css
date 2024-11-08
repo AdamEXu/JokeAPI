@@ -19,4 +19,14 @@
     margin-right: 3px;
     width: calc(100% - 50px);
   }
+
+  @media (prefers-color-scheme: dark) {
+    .joke {
+      background-color: #262626;
+    }
+
+    .joke:hover {
+      background-color: #262626;
+    }
+  }
 }
