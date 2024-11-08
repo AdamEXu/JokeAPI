@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Joke API (API YSWS Example)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/styles/style.css" />
+    <link rel="stylesheet" href="/static/styles/darkmode.css" />
+    <link rel="stylesheet" href="/static/styles/mobile.css" />
+  </head>
+  <body>
+    <h1>Joke API (API YSWS Example)</h1>
+    <h2>Random Joke</h2>
+    <p class="joke"><b>Q:</b> {{ joke.q }}</p>
+    <p class="joke"><b>A:</b> {{ joke.a }}</p>
+    <h2>Joke of the Day</h2>
+    <p class="joke"><b>Q:</b> {{ joke_of_the_day.q }}</p>
+    <p class="joke"><b>A:</b> {{ joke_of_the_day.a }}</p>
+    <h2>API Documentation</h2>
+    <p>
+      Note that all examples below use the joke above inside of them. However,
+      the API will return a random joke every time.
+    </p>
+    <p>
+      You do not have to use <inlinecode>curl</inlinecode>, you can make
+      requests with any HTTP client.
+    </p>
+    <div class="joke">
+      <b>GET /</b>
+      <p>Parameters: None</p>
+      <p>
+        Returns this HTML page containing a random joke and the API
+        documentation.
+      </p>
+      <p>Example usage:</p>
+      <code>curl https://raspapi-example.adamthegreat.hackclub.app/</code>
+      <p>Returns:</p>
+      <code class="small">{{ html_page }}</code>
+    </div>
+    <div class="joke">
+      <b>POST /</b>
+      <p>Parameters: None</p>
+      <p>Returns a random joke in JSON format.</p>
+      <p>Example usage:</p>
+      <code
+        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/</code
+      >
+      <p>Returns:</p>
+      <code>{{ joke }}</code>
+    </div>
+    <div class="joke">
+      <b>POST /puns</b>
+      <p>Parameters: number (optional)</p>
+      <p>
+        Returns a list of random jokes in JSON format. If number is not given,
+        returns all jokes.
+      </p>
+      <p>Example usage:</p>
+      <!-- prettier-ignore -->
+      <code
+        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/puns -H "Content-Type: application/json" -d '{"number": 3}'</code
+      >
+      <!-- prettier-ignore -->
+      <p>Returns:</p>
+      <code>{{ jokes[0:3] }}</code>
+    </div>
+    <div class="joke">
+      <b>POST /joke-of-the-day</b>
+      <p>Parameters: date (optional)</p>
+      <p>
+        Returns a random joke in JSON format. If date is given, it fetches the
+        joke of the day for that date. If date is not given, it fetches the joke
+        of the day for today.
+      </p>
+      <p>Example usage:</p>
+      <!-- prettier-ignore -->
+      <code
+        >curl -X POST http://127.0.0.1:8080/joke-of-the-day -H "Content-Type: application/json" -d '{"date": "<span id="date"></span>"}'
+      </code>
+      <!-- prettier-ignore -->
+      <script>
+        // set date to current date in YYYY-MM-DD format
+        document.getElementById("date").innerHTML = new Date()
+          .toISOString()
+          .split("T")[0];
+      </script>
+      <p>Returns:</p>
+      <code>{{ joke_of_the_day }}</code>
+    </div>
+    <div class="joke">
+      <b>POST /generate-joke</b>
+      <p>Parameters: prompt (optional)</p>
+      <p>
+        Returns a random joke in JSON format. If prompt is given, it generates a
+        joke relating to the prompt. If prompt is not given, it generates a
+        random programming related joke.
+      </p>
+      <p>Example usage:</p>
+      <!-- prettier-ignore -->
+      <code
+        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/generate-joke -H "Content-Type: application/json" -d '{"prompt": "something goes here"}'</code
+      >
+      <!-- prettier-ignore -->
+      <p>Returns:</p>
+      <!-- prettier-ignore -->
+      <code
+        >{"q": "Since generating jokes costs money, you will need to copy and paste the above into your terminal to see an actual result.", "a": "Sorry for any inconvenience.", "tags": ["money", "cost", "copy","paste"]}</code
+      >
+      <!-- prettier-ignore -->
+    </div>
+  </body>
+</html>

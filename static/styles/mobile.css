@@ -1,0 +1,22 @@
+@media (max-width: 600px) {
+  .joke {
+    margin-left: 3px;
+    margin-right: 3px;
+    width: calc(100% - 50px);
+    box-shadow: none;
+    border-radius: 0;
+    background-color: #fff;
+  }
+
+  .joke:hover {
+    transform: scale(1);
+    box-shadow: none;
+    background-color: #fff;
+  }
+
+  code {
+    margin-left: 3px;
+    margin-right: 3px;
+    width: calc(100% - 50px);
+  }
+}

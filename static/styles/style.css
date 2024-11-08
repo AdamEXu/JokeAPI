@@ -1,0 +1,88 @@
+body {
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+p {
+  font-size: 18px;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.joke {
+  font-size: 24px;
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  min-height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.joke:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  background-color: #fff;
+  transform: scale(1.02);
+}
+
+code {
+  font-family: monospace;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  text-align: left;
+  margin: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #863312;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-height: 500px;
+  overflow: auto;
+  y-overflow: scroll;
+}
+
+code.small {
+  font-size: 8px;
+}
+
+inlinecode {
+  font-family: monospace;
+  background-color: #f9f9f9;
+  padding: 2px;
+  border-radius: 4px;
+  display: inline-block;
+  text-align: left;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #000000;
+}

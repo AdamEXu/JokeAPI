@@ -1,0 +1,197 @@
+[
+  {
+    "q": "Why did the programmer go broke?",
+    "a": "Because he used up all his cache.",
+    "tags": ["programming", "money", "pun"]
+  },
+  {
+    "q": "Why do pirates prefer programming in Python?",
+    "a": "Because they love the 'arg-uments'!",
+    "tags": ["programming", "pirates", "pun"]
+  },
+  {
+    "q": "Why was the computer cold?",
+    "a": "It left its Windows open.",
+    "tags": ["windows", "computers", "pun"]
+  },
+  {
+    "q": "Why do programmers prefer dark mode?",
+    "a": "Because light attracts bugs.",
+    "tags": ["programming", "dark mode", "pun"]
+  },
+  {
+    "q": "Why did the pirate get into coding?",
+    "a": "He wanted to learn the 'C'.",
+    "tags": ["programming", "pirates", "pun"]
+  },
+  {
+    "q": "Why did the function break up with the loop?",
+    "a": "It found someone else to call.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why did the coder get stuck in the shower?",
+    "a": "Because the instructions on the shampoo were: Lather, Rinse, Repeat.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why was the computer tired when it got home?",
+    "a": "It had a hard drive.",
+    "tags": ["computers", "pun"]
+  },
+  {
+    "q": "Why do programmers hate camping?",
+    "a": "Because there are a lot of bugs.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why was the developer bad at socializing?",
+    "a": "He couldn't handle all of the arguments.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "How do trees get on the Internet?",
+    "a": "They log on.",
+    "tags": ["programming", "internet", "pun"]
+  },
+  {
+    "q": "What do computers like to eat?",
+    "a": "Chips.",
+    "tags": ["computers", "pun"]
+  },
+  {
+    "q": "What does a baby computer call his father?",
+    "a": "Data.",
+    "tags": ["computers", "pun"]
+  },
+  {
+    "q": "Why was the variable unhappy?",
+    "a": "Because it was feeling negated.",
+    "tags": ["programming", "computers", "pun"]
+  },
+  {
+    "q": "Why did the debugger go to therapy?",
+    "a": "Because it was struggling to debug its emotions.",
+    "tags": ["programming", "therapy", "pun"]
+  },
+  {
+    "q": "Why did the coffee file a police report?",
+    "a": "Because it got mugged!",
+    "tags": ["humor", "coffee", "pun"]
+  },
+  {
+    "q": "Why do programmers prefer dark mode?",
+    "a": "Because light attracts bugs.",
+    "tags": ["programming", "darkmode", "pun"]
+  },
+  {
+    "q": "Why did the programmer quit his job?",
+    "a": "Because he didn't get arrays.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why don’t Java programmers wear glasses?",
+    "a": "Because they can C#.",
+    "tags": ["programming", "pun", "java"]
+  },
+  {
+    "q": "Why did the developer join the pirate crew?",
+    "a": "He wanted to work on the high C’s.",
+    "tags": ["programming", "pirates", "pun"]
+  },
+  {
+    "q": "Why did the function break up with the variable?",
+    "a": "It felt it wasn’t being assigned enough value.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why don’t programmers like nature?",
+    "a": "Too many bugs.",
+    "tags": ["programming", "pun", "nature"]
+  },
+  {
+    "q": "Why did the Python developer take up boxing?",
+    "a": "He wanted to learn how to handle hits.",
+    "tags": ["programming", "pun", "python"]
+  },
+  {
+    "q": "Why do programmers make terrible pirates?",
+    "a": "They don’t like too many loops.",
+    "tags": ["programming", "pirates", "pun"]
+  },
+  {
+    "q": "What’s a programmer's least favorite type of ship?",
+    "a": "Partnership.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why did the programmer go on a diet?",
+    "a": "Because he had too many bytes.",
+    "tags": ["programming", "pun", "food"]
+  },
+  {
+    "q": "Why did the HTML tag break up with the body tag?",
+    "a": "It wasn’t getting any class.",
+    "tags": ["programming", "pun", "html"]
+  },
+  {
+    "q": "Why did the pirate coder get fired?",
+    "a": "He kept taking 'byte' out of every 'array'.",
+    "tags": ["programming", "pirates", "pun"]
+  },
+  {
+    "q": "Why did the server crash the party?",
+    "a": "Because it couldn’t handle the request!",
+    "tags": ["programming", "servers", "pun"]
+  },
+  {
+    "q": "Why was the object-oriented programmer always so chill?",
+    "a": "Because he didn’t have any private issues.",
+    "tags": ["programming", "pun", "oop"]
+  },
+  {
+    "q": "Why did the programmer bring a ladder to the code review?",
+    "a": "To reach the high level.",
+    "tags": ["programming", "pun", "code review"]
+  },
+  {
+    "q": "Why did the bit go to school?",
+    "a": "To get more byte!",
+    "tags": ["programming", "pun", "education"]
+  },
+  {
+    "q": "What’s a programmer’s favorite hangout spot?",
+    "a": "The cache!",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why was the code so sad?",
+    "a": "It had too many errors to compile.",
+    "tags": ["programming", "pun"]
+  },
+  {
+    "q": "Why was the JavaScript developer afraid of the sea?",
+    "a": "Because he didn’t want to ‘callback’ a shark!",
+    "tags": ["programming", "pun", "javascript"]
+  },
+  {
+    "q": "Why did the programmer refuse to play hide and seek?",
+    "a": "Because good code should never be hidden.",
+    "tags": ["programming", "pun", "games"]
+  },
+  {
+    "q": "What’s a pirate’s favorite data structure?",
+    "a": "An ‘array’, matey!",
+    "tags": ["programming", "pirates", "pun"]
+  },
+  {
+    "q": "Why did the programmer go to the beach?",
+    "a": "To find some refreshment and a little debugging.",
+    "tags": ["programming", "pun", "beach"]
+  },
+  {
+    "q": "Why did the programmer get seasick?",
+    "a": "Too many floating points.",
+    "tags": ["programming", "pun", "sea"]
+  }
+]
