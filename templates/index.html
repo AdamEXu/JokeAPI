@@ -33,13 +33,27 @@
     />
   </head>
   <body>
-    <img
-      src="/static/images/logo.png"
-      alt="Joke Generator"
-      width="100"
-      height="100"
-    />
-    <h1>Joke API (RaspAPI YSWS Example)</h1>
+    <nav>
+      <a href="/">
+        <img
+          src="/static/images/logo.png"
+          alt="Joke Generator"
+          width="100"
+          height="100"
+        />
+      </a>
+      <h1>Joke API (RaspAPI YSWS Example)</h1>
+      <form action="/search-jokes" method="GET">
+        <input type="text" name="query" placeholder="Search Jokes" />
+        <input type="submit" value="Search" />
+      </form>
+    </nav>
+    <p>
+      Welcome to this example API for the (not yet official) RaspAPI YSWS
+      program. This website is pretty simple, and it gives a pretty good idea on
+      what submissions should look like. The website is pretty buggy at the
+      moment, but clicking on the logo will take you back to this page.
+    </p>
     <p>
       View the source code
       <a href="https://github.com/AdamEXu/JokeAPI">here</a>.
@@ -69,7 +83,9 @@
       <p>Example usage:</p>
       <code>curl https://raspapi-example.adamthegreat.hackclub.app/</code>
       <p>Returns:</p>
-      <code class="small">{{ html_page }}</code>
+      <a href="/" style="text-decoration: none"
+        ><code class="small">{{ html_page }}</code></a
+      >
     </div>
     <div class="joke">
       <b>POST /</b>
@@ -122,6 +138,22 @@
       <code>{{ joke_of_the_day }}</code>
     </div>
     <div class="joke">
+      <b>GET /generate-joke</b>
+      <p>Parameters: prompt (optional)</p>
+      <p>
+        Returns a random joke in plain text. If prompt is given, it generates a
+        joke relating to the prompt. If prompt is not given, it generates a
+        random programming related joke.
+      </p>
+      <p>Example usage:</p>
+      <code
+        >curl
+        https://raspapi-example.adamthegreat.hackclub.app/generate-joke?prompt=programming</code
+      >
+      <p>Returns:</p>
+      <code>Q: {{ joke.q }}<br />A: {{ joke.a }}</code>
+    </div>
+    <div class="joke">
       <b>POST /generate-joke</b>
       <p>Parameters: prompt (optional)</p>
       <p>
@@ -141,6 +173,25 @@
         >{"q": "Since generating jokes costs money, you will need to copy and paste the above into your terminal to see an actual result.", "a": "Sorry for any inconvenience.", "tags": ["money", "cost", "copy","paste"]}</code
       >
       <!-- prettier-ignore -->
+    </div>
+    <div class="joke">
+      <b>GET /search-jokes</b>
+      <p>Parameters: query</p>
+      <p>
+        Returns this HTML page containing a list of jokes that contain the
+        query.
+      </p>
+      <p>Example usage:</p>
+      <code
+        >curl
+        https://raspapi-example.adamthegreat.hackclub.app/search-jokes?query=something</code
+      >
+      <p>Returns:</p>
+      <a href="/search-jokes?query=" style="text-decoration: none"
+        ><iframe src="/search-jokes?query=" width="60%" height="300"
+          >You need a browser to view this page.</iframe
+        ></a
+      >
     </div>
     <div class="joke">
       <b>POST /search-jokes</b>

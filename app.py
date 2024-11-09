@@ -65,6 +65,18 @@ def generate_joke_api():
   except json.JSONDecodeError:
     return jsonify({"error": "Something went wrong while generating the joke"}), 500
 
+@app.route('/generate-joke', methods=['GET'])
+def generate_joke_page():
+  query = request.args.get('prompt')
+  if query == None:
+    query = ""
+  joke_string = generate_joke(query)
+  try:
+    joke_json = json.loads(joke_string)
+    return f'Q: {joke_json["q"]}\nA: {joke_json["a"]}'
+  except json.JSONDecodeError:
+    return "Something went wrong while generating the joke"
+
 @app.route('/search-jokes', methods=['POST'])
 def search_jokes():
   data = request.get_json(silent=True)
@@ -79,11 +91,23 @@ def search_jokes():
 
   results = []
   for joke in jokes:
-    if query in joke['q'] or query in joke['a'] or query in joke['tags']:
+    if query.lower() in joke['q'].lower() or query.lower() in joke['a'].lower() or query.lower() in joke['tags']:
       results.append(joke)
       if len(results) == limit:
         break
   return jsonify(results)
+
+@app.route('/search-jokes', methods=['GET'])
+def search_jokes_by_tag():
+  query = request.args.get('query')
+  if query is None:
+    return redirect('/')
+  jokes_tmp = []
+  for joke in jokes:
+    if query.lower() in joke['q'].lower() or query.lower() in joke['a'].lower() or query.lower() in joke['tags']:
+      jokes_tmp.append(joke)
+  print(jokes_tmp)
+  return render_template('search-jokes.html', jokes=jokes_tmp)
 
 @app.route('/get-jokes-by-tag', methods=['POST'])
 def get_jokes_by_tag():

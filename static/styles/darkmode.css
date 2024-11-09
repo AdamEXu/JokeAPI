@@ -21,4 +21,38 @@
     background-color: #2f2f2f;
     color: #fff;
   }
+
+  input {
+    background-color: #2f2f2f;
+    color: #fff;
+  }
+
+  input[type="submit"] {
+    background-color: #2f2f2f;
+    color: #fff;
+  }
+
+  input:hover {
+    background-color: #292929;
+  }
+
+  input:active {
+    background-color: #292929;
+  }
+
+  input:focus {
+    background-color: #292929;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #22aaff;
+  }
+
+  a:active {
+    color: #0044ff;
+  }
 }
