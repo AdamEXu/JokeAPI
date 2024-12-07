@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Joke API (RaspAPI YSWS)</title>
+    <title>JokeAPI</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/static/styles/style.css" />
@@ -11,25 +11,19 @@
     <!-- SEO Metadata -->
     <meta
       name="description"
-      content="An API that serves random and generated jokes. RaspAPI YSWS Example"
+      content="An API that serves random and generated jokes."
     />
     <!-- Open Graph Metadata -->
-    <meta
-      property="og:title"
-      content="Joke API (RaspAPI YSWS Example Project)"
-    />
+    <meta property="og:title" content="JokeAPI" />
     <meta
       property="og:description"
-      content="An API that serves random and generated jokes. RaspAPI YSWS Example"
+      content="An API that serves random and generated jokes."
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://raspapi-example.adamthegreat.hackclub.app/"
-    />
+    <meta property="og:url" content="https://raspapi-jokeapi.vercel.app/" />
     <meta
       property="og:image"
-      content="https://raspapi-example.adamthegreat.hackclub.app/static/images/logo.png"
+      content="https://raspapi-jokeapi.vercel.app/static/images/logo.png"
     />
   </head>
   <body>
@@ -49,10 +43,9 @@
       </form>
     </nav>
     <p>
-      Welcome to this example API for the (not yet official) RaspAPI YSWS
-      program. This website is pretty simple, and it gives a pretty good idea on
-      what submissions should look like. The website is pretty buggy at the
-      moment, but clicking on the logo will take you back to this page.
+      Welcome to this Joke API! This website is pretty simple, and it gives a
+      pretty good idea on what the API does. You can try out the API by using
+      <inlinecode>curl</inlinecode> or any other HTTP client.
     </p>
     <p>
       View the source code
@@ -81,7 +74,7 @@
         documentation.
       </p>
       <p>Example usage:</p>
-      <code>curl https://raspapi-example.adamthegreat.hackclub.app/</code>
+      <code>curl https://raspapi-jokeapi.vercel.app/</code>
       <p>Returns:</p>
       <a href="/" style="text-decoration: none"
         ><code class="small">{{ html_page }}</code></a
@@ -92,9 +85,7 @@
       <p>Parameters: None</p>
       <p>Returns a random joke in JSON format.</p>
       <p>Example usage:</p>
-      <code
-        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/</code
-      >
+      <code>curl -X POST https://raspapi-jokeapi.vercel.app/</code>
       <p>Returns:</p>
       <code>{{ joke }}</code>
     </div>
@@ -108,7 +99,7 @@
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
-        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/puns -H "Content-Type: application/json" -d '{"number": 3}'</code
+        >curl -X POST https://raspapi-jokeapi.vercel.app/puns -H "Content-Type: application/json" -d '{"number": 3}'</code
       >
       <!-- prettier-ignore -->
       <p>Returns:</p>
@@ -146,10 +137,11 @@
         random programming related joke.
       </p>
       <p>Example usage:</p>
+      <!-- prettier-ignore -->
       <code
-        >curl
-        https://raspapi-example.adamthegreat.hackclub.app/generate-joke?prompt=programming</code
+        >curl https://raspapi-jokeapi.vercel.app/generate-joke?prompt=programming</code
       >
+      <!-- prettier-ignore -->
       <p>Returns:</p>
       <code>Q: {{ joke.q }}<br />A: {{ joke.a }}</code>
     </div>
@@ -164,7 +156,7 @@
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
-        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/generate-joke -H "Content-Type: application/json" -d '{"prompt": "something goes here"}'</code
+        >curl -X POST https://raspapi-jokeapi.vercel.app/generate-joke -H "Content-Type: application/json" -d '{"prompt": "something goes here"}'</code
       >
       <!-- prettier-ignore -->
       <p>Returns:</p>
@@ -182,10 +174,11 @@
         query.
       </p>
       <p>Example usage:</p>
+      <!-- prettier-ignore -->
       <code
-        >curl
-        https://raspapi-example.adamthegreat.hackclub.app/search-jokes?query=something</code
+        >curl https://raspapi-jokeapi.vercel.app/search-jokes?query=something</code
       >
+      <!-- prettier-ignore -->
       <p>Returns:</p>
       <a href="/search-jokes?query=" style="text-decoration: none"
         ><iframe src="/search-jokes?query=" width="60%" height="300"
@@ -204,7 +197,7 @@
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
-        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/search-jokes -H "Content-Type: application/json" -d '{"query": "something goes here", "limit": 3}'</code
+        >curl -X POST https://raspapi-jokeapi.vercel.app/search-jokes -H "Content-Type: application/json" -d '{"query": "something goes here", "limit": 3}'</code
       >
       <!-- prettier-ignore -->
       <p>Returns:</p>
@@ -217,12 +210,16 @@
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
-        >curl -X POST https://raspapi-example.adamthegreat.hackclub.app/get-jokes-by-tag -H "Content-Type: application/json" -d '{"tag": "programming"}'</code
+        >curl -X POST https://raspapi-jokeapi.vercel.app/get-jokes-by-tag -H "Content-Type: application/json" -d '{"tag": "programming"}'</code
       >
       <!-- prettier-ignore -->
       <p>Returns:</p>
       <code>{{ jokes[0:3] }}</code>
     </div>
+    <p>
+      Read a list of all jokes
+      <a href="/search?query=">here</a>.
+    </p>
     <footer>
       <p>Made with ❤️ by <a href="https://adamxu.net/">Adam Xu</a></p>
     </footer>

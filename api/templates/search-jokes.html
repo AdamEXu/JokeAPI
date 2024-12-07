@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Joke API (RaspAPI YSWS)</title>
+    <title>JokeAPI</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/static/styles/style.css" />
@@ -11,25 +11,19 @@
     <!-- SEO Metadata -->
     <meta
       name="description"
-      content="An API that serves random and generated jokes. RaspAPI YSWS Example"
+      content="An API that serves random and generated jokes."
     />
     <!-- Open Graph Metadata -->
-    <meta
-      property="og:title"
-      content="Joke API (RaspAPI YSWS Example Project)"
-    />
+    <meta property="og:title" content="JokeAPI" />
     <meta
       property="og:description"
-      content="An API that serves random and generated jokes. RaspAPI YSWS Example"
+      content="An API that serves random and generated jokes."
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://raspapi-example.adamthegreat.hackclub.app/"
-    />
+    <meta property="og:url" content="https://raspapi-jokeapi.vercel.app/" />
     <meta
       property="og:image"
-      content="https://raspapi-example.adamthegreat.hackclub.app/static/images/logo.png"
+      content="https://raspapi-jokeapi.vercel.app/static/images/logo.png"
     />
   </head>
   <body>
@@ -49,35 +43,41 @@
       </form>
     </nav>
     <p>
-      Welcome to this example API for the (not yet official) RaspAPI YSWS
-      program. This website is pretty simple, and it gives a pretty good idea on
-      what submissions should look like. The website is pretty buggy at the
-      moment, but clicking on the logo will take you back to home.
+      Welcome to this Joke API! This website is pretty simple, and it gives a
+      pretty good idea on what the API does. You can try out the API by using
+      <inlinecode>curl</inlinecode> or any other HTTP client.
     </p>
     <p>
       View the source code
       <a href="https://github.com/AdamEXu/JokeAPI">here</a>.
     </p>
     <h2>Search Results</h2>
-    <p>
-      Here are the jokes that contain your query. Yes, the search sucks. No, I'm
-      not going to fix it since this is just an example project.
+    <p id="querry-wrapper">
+      Here are the jokes that contain the query "<span id="query"></span>".
     </p>
-    {% for joke in jokes %}
+    <script>
+      // set query to query in URL
+      document.getElementById("query").innerHTML = new URL(
+        window.location.href
+      ).searchParams.get("query");
+      if (document.getElementById("query").innerHTML == "") {
+        document.getElementById("querry-wrapper").innerHTML =
+          "Here are all the jokes.";
+      }
+    </script>
+    {% if jokes|length == 0 %}
+    <p>
+      Sorry, no jokes were found. Try searching for something else. Or you can
+      click <a href="/search?query=">here</a> to see all jokes.
+    </p>
+    {% endif %} {% for joke in jokes %}
     <h2>Joke #{{ loop.index }}</h2>
     <p class="joke"><b>Q:</b> {{ joke.q }}</p>
     <p class="joke"><b>A:</b> {{ joke.a }}</p>
     {% endfor %}
     <p>
-      Sorry about the scuffed search, but I'm still not going to fix it. You can
-      fix it and
-      <a href="https://github.com/AdamEXu/JokeAPI">submit a PR though</a>. (If
-      you do you get absolutely nothing except for the satisfaction of fixing
-      that annoying search on some stupid example website)
-    </p>
-    <p>
-      Btw to get out of here, just click on the logo to go back to the home
-      page.
+      Read the API documentation
+      <a href="/">here</a>.
     </p>
     <footer>
       <p>Made with ❤️ by <a href="https://adamxu.net/">Adam Xu</a></p>

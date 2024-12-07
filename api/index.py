@@ -109,6 +109,10 @@ def search_jokes_by_tag():
   print(jokes_tmp)
   return render_template('search-jokes.html', jokes=jokes_tmp)
 
+@app.route('/search', methods=['GET'])
+def search():
+  return search_jokes_by_tag()
+
 @app.route('/get-jokes-by-tag', methods=['POST'])
 def get_jokes_by_tag():
   data = request.get_json(silent=True)
