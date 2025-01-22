@@ -1,6 +1,6 @@
-# Joke API (Example)
+# Joke API
 
-This is an example for the (not yet official) RaspAPI YSWS program.
+It's an API that generates jokes! The in-built ones are programming jokes, but using the `/generate-joke` route, you can generate any joke you would like using AI!
 
 ## Routes
 
