@@ -53,6 +53,7 @@ Now, go to [localhost](http://localhost/), or [localhost:8080](http://localhost:
 I hosted the API on two places:
 
 **Vercel:** [raspapi-jokeapi.vercel.app](https://raspapi-jokeapi.vercel.app/)
+
 **Nest:** [raspapi-example.adamthegreat.hackclub.app](https://raspapi-example.adamthegreat.hackclub.app/)
 
 Note that both of these may stop working at any time. The Vercel hosted one will likely be more reliable (nest outages \*cough\*)
