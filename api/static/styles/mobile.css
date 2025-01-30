@@ -20,6 +20,24 @@
     width: calc(100% - 50px);
   }
 
+  p {
+    margin-left: 10px;
+    /* margin-right: 10px; */
+    width: calc(100% - 50px);
+  }
+
+  .ai {
+    margin-left: 3px;
+    margin-right: 3px;
+    width: calc(100% - 50px);
+  }
+
+  .ai-btn {
+    margin-left: 3px;
+    margin-right: 3px;
+    width: calc(100% - 50px);
+  }
+
   @media (prefers-color-scheme: dark) {
     .joke {
       background-color: #262626;

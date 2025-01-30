@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="/static/styles/darkmode.css" />
     <link rel="stylesheet" href="/static/styles/mobile.css" />
     <link rel="icon" href="/static/images/logo.png" />
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <!-- SEO Metadata -->
     <meta
       name="description"
@@ -17,7 +24,7 @@
     <meta property="og:title" content="JokeAPI" />
     <meta
       property="og:description"
-      content="An API that serves random and generated jokes."
+      content="An API that serves random and generated jokes. Try it out for free! No API key required."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://raspapi-jokeapi.vercel.app/" />
@@ -28,15 +35,18 @@
   </head>
   <body>
     <nav>
-      <a href="/">
-        <img
-          src="/static/images/logo.png"
-          alt="Joke Generator"
-          width="100"
-          height="100"
-        />
-      </a>
-      <h1>Joke API (RaspAPI YSWS Example)</h1>
+      <div>
+        <a href="/">
+          <img
+            src="/static/images/logo.png"
+            alt="Joke Generator"
+            width="100"
+            height="100"
+          />
+        </a>
+        <span id="bouncing-text">{{ joke.q }}<br />{{ joke.a }}</span>
+      </div>
+      <h1>Joke API</h1>
       <form action="/search-jokes" method="GET">
         <input type="text" name="query" placeholder="Search Jokes" />
         <input type="submit" value="Search" />
@@ -47,16 +57,39 @@
       pretty good idea on what the API does. You can try out the API by using
       <inlinecode>curl</inlinecode> or any other HTTP client.
     </p>
+    <h2>What is this?</h2>
+    <p>
+      JokeAPI is an API that serves random and generated jokes. It is great for
+      adding a dash of humor to your application or website easily. I curated a
+      list of only the best programming jokes to save you the hassle of finding
+      them yourself. You can also generate your own jokes using the API,
+      allowing your users to have a good time. The API is really fast and easy
+      to use. Just make a request to the API and you will get a random joke in
+      JSON format.
+    </p>
+    <p>The documentation for the API is below.</p>
     <p>
       View the source code
       <a href="https://github.com/AdamEXu/JokeAPI">here</a>.
     </p>
-    <h2>Random Joke</h2>
-    <p class="joke"><b>Q:</b> {{ joke.q }}</p>
-    <p class="joke"><b>A:</b> {{ joke.a }}</p>
-    <h2>Joke of the Day</h2>
-    <p class="joke"><b>Q:</b> {{ joke_of_the_day.q }}</p>
-    <p class="joke"><b>A:</b> {{ joke_of_the_day.a }}</p>
+    <div class="joke ai">
+      <h2 class="ai-text">Generate jokes with AI! ✨</h2>
+      <p class="ai-text">
+        Generate unique jokes with the power of large language models. Every
+        time, you'll get a new joke. You can also specify a prompt to generate
+        jokes related to that topic. Try it out now!
+      </p>
+      <a class="button ai-btn" href="#generate-joke">Try it out 🪄</a>
+    </div>
+    <div class="joke">
+      <h2>Joke of the Day</h2>
+      <p>
+        The joke of the day shows a new joke each day. The joke will remain for
+        the day.
+      </p>
+      <p class="joke"><b>Q:</b> {{ joke_of_the_day.q }}</p>
+      <p class="joke"><b>A:</b> {{ joke_of_the_day.a }}</p>
+    </div>
     <h2>API Documentation</h2>
     <p>
       Note that all examples below use the joke above inside of them. However,
@@ -70,27 +103,16 @@
       <b>GET /</b>
       <p>Parameters: None</p>
       <p>
-        Returns this HTML page containing a random joke and the API
-        documentation.
+        Returns a random joke in JSON format. The user agent is checked and if
+        the request is from a browser, it will return this HTML page.
       </p>
       <p>Example usage:</p>
       <code>curl https://raspapi-jokeapi.vercel.app/</code>
       <p>Returns:</p>
-      <a href="/" style="text-decoration: none"
-        ><code class="small">{{ html_page }}</code></a
-      >
-    </div>
-    <div class="joke">
-      <b>POST /</b>
-      <p>Parameters: None</p>
-      <p>Returns a random joke in JSON format.</p>
-      <p>Example usage:</p>
-      <code>curl -X POST https://raspapi-jokeapi.vercel.app/</code>
-      <p>Returns:</p>
       <code>{{ joke }}</code>
     </div>
     <div class="joke">
-      <b>POST /puns</b>
+      <b>GET /puns</b>
       <p>Parameters: number (optional)</p>
       <p>
         Returns a list of random jokes in JSON format. If number is not given,
@@ -99,7 +121,7 @@
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
-        >curl -X POST https://raspapi-jokeapi.vercel.app/puns -H "Content-Type: application/json" -d '{"number": 3}'</code
+        >curl https://raspapi-jokeapi.vercel.app/puns?number=3'</code
       >
       <!-- prettier-ignore -->
       <p>Returns:</p>
@@ -116,7 +138,7 @@
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
-        >curl -X POST http://127.0.0.1:8080/joke-of-the-day -H "Content-Type: application/json" -d '{"date": "<span id="date"></span>"}'
+        >curl -X GET http://127.0.0.1:8080/joke-of-the-day?date=<span id="date"></span>
       </code>
       <!-- prettier-ignore -->
       <script>
@@ -136,6 +158,10 @@
         joke relating to the prompt. If prompt is not given, it generates a
         random programming related joke.
       </p>
+      <p>
+        The model used is Llama3.2-7b-instant by Meta, which is hosted on Groq.
+        Generation is really fast (usually &lt;100 ms but sometimes a bit more).
+      </p>
       <p>Example usage:</p>
       <!-- prettier-ignore -->
       <code
@@ -143,7 +169,47 @@
       >
       <!-- prettier-ignore -->
       <p>Returns:</p>
-      <code>Q: {{ joke.q }}<br />A: {{ joke.a }}</code>
+      <code>Q: {{ joke.q }}<br />A: {{ joke.a }}</code><br />
+      <div class="ai">
+        <h1 id="generate-joke" class="ai-text">Generate your own joke!</h1>
+        <script>
+          function generateJoke() {
+            document.getElementById("generated-joke").innerHTML =
+              "<span style='color: #30ffaa'>Generating... This will take less than a second.</span>";
+            const prompt = document.querySelector("input[name=prompt]").value;
+            const url = `/generate-joke?prompt=${prompt}`;
+            fetch(url)
+              .then((response) => response.text())
+              .then((data) => {
+                document.getElementById("generated-joke").innerHTML =
+                  data.replace("\n", "<br>");
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                document.getElementById("generated-joke").innerHTML =
+                  "Failed to generate joke. Please try again.";
+              });
+          }
+        </script>
+        <form onsubmit="event.preventDefault(); generateJoke()" method="GET">
+          <p class="ai-text">
+            <label for="prompt" class="ai-text"
+              >What would you like to generate?</label
+            ><br />
+            <input
+              type="text"
+              maxlength="10000"
+              name="prompt"
+              placeholder="Prompt (optional)"
+              class="ai-input"
+            />
+          </p>
+          <p class="ai-text">
+            <input type="submit" class="ai-gen-btn" value="Generate ✨" />
+          </p>
+        </form>
+        <p id="generated-joke" class="ai-text">Your joke will appear here.</p>
+      </div>
     </div>
     <div class="joke">
       <b>POST /generate-joke</b>
@@ -165,26 +231,6 @@
         >{"q": "Since generating jokes costs money, you will need to copy and paste the above into your terminal to see an actual result.", "a": "Sorry for any inconvenience.", "tags": ["money", "cost", "copy","paste"]}</code
       >
       <!-- prettier-ignore -->
-    </div>
-    <div class="joke">
-      <b>GET /search-jokes</b>
-      <p>Parameters: query</p>
-      <p>
-        Returns this HTML page containing a list of jokes that contain the
-        query.
-      </p>
-      <p>Example usage:</p>
-      <!-- prettier-ignore -->
-      <code
-        >curl https://raspapi-jokeapi.vercel.app/search-jokes?query=something</code
-      >
-      <!-- prettier-ignore -->
-      <p>Returns:</p>
-      <a href="/search-jokes?query=" style="text-decoration: none"
-        ><iframe src="/search-jokes?query=" width="60%" height="300"
-          >You need a browser to view this page.</iframe
-        ></a
-      >
     </div>
     <div class="joke">
       <b>POST /search-jokes</b>
@@ -224,4 +270,31 @@
       <p>Made with ❤️ by <a href="https://adamxu.net/">Adam Xu</a></p>
     </footer>
   </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/toastify-js"
+  ></script>
+  <script>
+    // when any <code> element is hovered, show a tooltip that says "Click to copy"
+    document.querySelectorAll("code").forEach((code) => {
+      tippy(code, {
+        content: "Click to copy",
+      });
+    });
+    // when any <code> element is clicked, copy the text inside of it to the clipboard
+    document.querySelectorAll("code").forEach((code) => {
+      code.addEventListener("click", () => {
+        navigator.clipboard.writeText(code.innerText);
+        Toastify({
+          text: "Copied to clipboard!",
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
+      });
+    });
+  </script>
 </html>

@@ -193,5 +193,180 @@
     "q": "Why did the programmer get seasick?",
     "a": "Too many floating points.",
     "tags": ["programming", "pun", "sea"]
+  },
+  {
+    "q": "Why do programmers prefer dark mode?",
+    "a": "Because light attracts bugs.",
+    "tags": ["programming", "dark mode", "bugs", "pun"]
+  },
+  {
+    "q": "How many programmers does it take to change a light bulb?",
+    "a": "None. It's a hardware problem.",
+    "tags": ["programming", "hardware", "pun"]
+  },
+  {
+    "q": "Why do Java developers wear glasses?",
+    "a": "Because they don't see sharp.",
+    "tags": ["programming", "Java", "pun"]
+  },
+  {
+    "q": "What is a programmer's favorite hangout place?",
+    "a": "The Foo Bar.",
+    "tags": ["programming", "pun", "places"]
+  },
+  {
+    "q": "Why did the developer go broke?",
+    "a": "Because he used up all his resources.",
+    "tags": ["programming", "money", "resources", "pun"]
+  },
+  {
+    "q": "Why was the JavaScript developer sad?",
+    "a": "Because he didn't Node how to Express himself.",
+    "tags": ["programming", "JavaScript", "pun"]
+  },
+  {
+    "q": "Why do Python programmers have low self-esteem?",
+    "a": "Because they're constantly comparing their self to others.",
+    "tags": ["programming", "Python", "pun"]
+  },
+  {
+    "q": "What's a programmer's favorite music genre?",
+    "a": "Algo-rhythm.",
+    "tags": ["programming", "music", "pun"]
+  },
+  {
+    "q": "Why do programmers hate nature?",
+    "a": "It has too many bugs.",
+    "tags": ["programming", "nature", "bugs", "pun"]
+  },
+  {
+    "q": "How do you comfort a JavaScript bug?",
+    "a": "You console it.",
+    "tags": ["programming", "JavaScript", "pun"]
+  },
+  {
+    "q": "Why was the developer unhappy at their job?",
+    "a": "They wanted arrays.",
+    "tags": ["programming", "job", "pun"]
+  },
+  {
+    "q": "Why do programmers prefer using the terminal?",
+    "a": "Because they can't C#.",
+    "tags": ["programming", "terminal", "pun"]
+  },
+  {
+    "q": "What do you call 8 hobbits?",
+    "a": "A hobbyte.",
+    "tags": ["programming", "pun", "fantasy"]
+  },
+  {
+    "q": "Why did the programmer quit his job?",
+    "a": "Because he didn't get arrays.",
+    "tags": ["programming", "job", "pun"]
+  },
+  {
+    "q": "What is a computer virus?",
+    "a": "A terminal illness.",
+    "tags": ["programming", "virus", "pun"]
+  },
+  {
+    "q": "Why was the computer cold?",
+    "a": "It forgot to close its Windows.",
+    "tags": ["programming", "windows", "pun"]
+  },
+  {
+    "q": "How does a computer get drunk?",
+    "a": "It takes screenshots.",
+    "tags": ["programming", "computer", "pun"]
+  },
+  {
+    "q": "Why did the web developer walk out of the meeting?",
+    "a": "Too many cookies.",
+    "tags": ["programming", "web development", "pun"]
+  },
+  {
+    "q": "What do you call a programmer from Finland?",
+    "a": "Nerdic.",
+    "tags": ["programming", "nationality", "pun"]
+  },
+  {
+    "q": "Why did the developer go to therapy?",
+    "a": "Because he had too many unresolved issues.",
+    "tags": ["programming", "therapy", "pun"]
+  },
+  {
+    "q": "Why don't programmers like to go outside?",
+    "a": "The sunlight causes too many glares on their screens.",
+    "tags": ["programming", "outside", "pun"]
+  },
+  {
+    "q": "What’s a programmer’s favorite place to hang out?",
+    "a": "GitHub.",
+    "tags": ["programming", "places", "pun"]
+  },
+  {
+    "q": "Why was the smartphone wearing glasses?",
+    "a": "It lost its contacts.",
+    "tags": ["technology", "pun"]
+  },
+  {
+    "q": "Why did the computer show up at work late?",
+    "a": "It had a hard drive.",
+    "tags": ["programming", "computer", "pun"]
+  },
+  {
+    "q": "How do computers pick their noses?",
+    "a": "They use their mouse.",
+    "tags": ["programming", "computer", "pun"]
+  },
+  {
+    "q": "Why did the coder get kicked out of school?",
+    "a": "Because he kept taking classes.",
+    "tags": ["programming", "school", "pun"]
+  },
+  {
+    "q": "What do computers eat for a snack?",
+    "a": "Microchips.",
+    "tags": ["programming", "food", "pun"]
+  },
+  {
+    "q": "Why was the computer tired when it got home?",
+    "a": "It had too many tabs open.",
+    "tags": ["programming", "computer", "pun"]
+  },
+  {
+    "q": "Why do programmers prefer cats over dogs?",
+    "a": "Because they’re better at handling errors.",
+    "tags": ["programming", "pets", "pun"]
+  },
+  {
+    "q": "Why did the functions stop calling each other?",
+    "a": "Because they had constant arguments.",
+    "tags": ["programming", "functions", "pun"]
+  },
+  {
+    "q": "What do you call a programmer who’s always on the move?",
+    "a": "A roaming developer.",
+    "tags": ["programming", "pun", "travel"]
+  },
+  {
+    "q": "Why was the developer's project always late?",
+    "a": "He didn't follow the agile methodology.",
+    "tags": ["programming", "project management", "pun"]
+  },
+  {
+    "q": "Why did the SQL developer leave his wife?",
+    "a": "She had too many joins.",
+    "tags": ["programming", "SQL", "pun"]
+  },
+  {
+    "q": "How do programmers enjoy nature?",
+    "a": "They log off.",
+    "tags": ["programming", "nature", "pun"]
+  },
+  {
+    "q": "Why did the developer bring a ladder to work?",
+    "a": "Because he heard the code had high-level bugs.",
+    "tags": ["programming", "work", "pun"]
   }
 ]
